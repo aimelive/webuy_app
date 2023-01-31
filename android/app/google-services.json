@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "393748362170",
+    "project_id": "we-buy-fb4e6",
+    "storage_bucket": "we-buy-fb4e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393748362170:android:1fafc21dfc0158a8782383",
+        "android_client_info": {
+          "package_name": "com.aimelive.webuy_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393748362170-166cfq9m26mf9q2a1qog4elmucr11fqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeRfL5K5MZAMzp_xXRIB8LHWJQMpjdeyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393748362170-166cfq9m26mf9q2a1qog4elmucr11fqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393748362170:android:5dd51ebfea000e69782383",
+        "android_client_info": {
+          "package_name": "com.aimelive.webuyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393748362170-166cfq9m26mf9q2a1qog4elmucr11fqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeRfL5K5MZAMzp_xXRIB8LHWJQMpjdeyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393748362170-166cfq9m26mf9q2a1qog4elmucr11fqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
