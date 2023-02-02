@@ -6,12 +6,13 @@ class TextInputField extends StatelessWidget {
   final void Function(String value) onChanged;
   final String? errorText;
   final bool obsecureText;
-  const TextInputField(
-      {super.key,
-      this.errorText,
-      required this.hintText,
-      this.obsecureText = false,
-      required this.onChanged});
+  const TextInputField({
+    super.key,
+    this.errorText,
+    required this.hintText,
+    this.obsecureText = false,
+    required this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,11 @@ class TextInputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Color(0xFFD0D0D0), width: 1.5),
+            border: Border.all(color: const Color(0xFFD0D0D0), width: 1.5),
           ),
           child: TextField(
             onChanged: onChanged,

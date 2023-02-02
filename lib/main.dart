@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:webuy_app/authentication/authentication_view.dart';
-import 'package:webuy_app/profile/profile.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:webuy_app/screens/home/home.dart';
 
+import 'authentication/authentication_view.dart';
 import 'authentication/controller/authentication_controller.dart';
 import 'firebase_options.dart';
 
@@ -29,22 +30,27 @@ class MyApp extends ConsumerWidget {
 
     Widget getHome() {
       if (authenticationState.status == AuthenticationStatus.authenticated) {
-        return const Profile();
-      } else if (authenticationState.status ==
-          AuthenticationStatus.unauthenticated) {
-        return const AuthenticationView();
+        return const Home();
       } else {
         return const AuthenticationView();
       }
     }
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // primarySwatch: Colors.blue,
-        canvasColor: const Color(0xFFFFFEF4),
-      ),
-      home: getHome(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 850),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            canvasColor: const Color(0xFFF2F2F3),
+          ),
+          home: child,
+        );
+      },
+      child: getHome(),
     );
   }
 }

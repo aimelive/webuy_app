@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:webuy_app/authentication/forgot_password/forgot_password.dart';
 
 class ForgotPwdButton extends StatelessWidget {
