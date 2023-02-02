@@ -23,7 +23,7 @@ class ErrorDialog extends StatelessWidget {
       title: Text(error),
       actions: [
         CupertinoDialogAction(
-          child: Text("Okay"),
+          child: const Text("Okay"),
           onPressed: () => Navigator.pop(context),
         )
       ],

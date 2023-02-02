@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webuy_app/constants/colors.dart';
 
 class RoundedButtonStyle extends StatelessWidget {
   final String title;
@@ -10,7 +11,7 @@ class RoundedButtonStyle extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 18),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: const Color(0xFFF5D973),
+        color: primaryColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
