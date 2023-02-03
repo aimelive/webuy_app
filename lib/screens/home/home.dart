@@ -118,7 +118,7 @@ class Home extends ConsumerWidget {
                                     : null,
                             child: Container(
                               width: 160.w,
-                              height: 165.h,
+                              height: 170.h,
                               padding: EdgeInsets.all(5.r),
                               child: FoodCardWidget(food: foods[index]),
                             ),

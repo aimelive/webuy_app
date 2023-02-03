@@ -33,7 +33,11 @@ class PaymentServices {
         MessageToast.error(context, "Payment intent is null");
       }
     } catch (e, s) {
-      MessageToast.error(context, "Exception: $e $s");
+      MessageToast.error(
+        context,
+        "Error: Something went wrong, Try again later",
+      );
+      print("Exception: $e $s");
     }
   }
 
@@ -50,10 +54,13 @@ class PaymentServices {
         MessageToast.error(
             context, "Error from Stripe: ${e.error.localizedMessage}");
       } else {
-        MessageToast.error(context, "Unforeseen error: $e");
+        MessageToast.error(context, "Unforeseen error: ${e.toString()}");
       }
     } catch (e) {
-      MessageToast.error(context, "Exception: $e");
+      MessageToast.error(
+        context,
+        "Error: ${e.toString()}",
+      );
     }
   }
 
