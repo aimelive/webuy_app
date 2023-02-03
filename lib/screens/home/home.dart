@@ -206,7 +206,7 @@ class Home extends ConsumerWidget {
                                       radius: 12.r,
                                       backgroundColor: Colors.redAccent,
                                       foregroundColor:
-                                          Theme.of(context).shadowColor,
+                                          Theme.of(context).cardColor,
                                       child: const Icon(Icons.remove),
                                     ),
                                   )
