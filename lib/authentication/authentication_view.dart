@@ -22,15 +22,16 @@ class _AuthenticationViewState extends State<AuthenticationView> {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
-            child: SlideFadeSwitcher(child: _showSignIn ? const SignIn() : const SignUp()),
+            child: SlideFadeSwitcher(
+                child: _showSignIn ? const SignIn() : const SignUp()),
           ),
           AnimatedShape(
-            color: const Color(0xFF595DC6),
             show: _showSignIn,
+            color: Theme.of(context).secondaryHeaderColor,
             title: "Create Account",
           ),
           AnimatedShape(
-            color: const Color(0xFFFC5F8E),
+            color: Theme.of(context).bottomAppBarColor,
             show: !_showSignIn,
             title: "Welcome Back",
           ),

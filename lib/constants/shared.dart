@@ -12,3 +12,9 @@ pushPage(BuildContext context, {required Widget to}) => Navigator.push(
       MaterialPageRoute(builder: (_) => to),
     );
 popPage(BuildContext context) => Navigator.pop(context);
+
+// bool isDarkTheme(BuildContext context) {
+//   var brightness = MediaQuery.of(context).platformBrightness;
+//   bool isDarkMode = brightness == Brightness.dark;
+//   return isDarkMode;
+// }

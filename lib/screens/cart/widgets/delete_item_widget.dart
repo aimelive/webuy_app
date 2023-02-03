@@ -46,7 +46,7 @@ class DeleteItemFromCart extends StatelessWidget {
                   shape: const StadiumBorder(),
                   elevation: 0.0,
                   foregroundColor: primaryColor,
-                  backgroundColor: white,
+                  backgroundColor: Theme.of(context).backgroundColor,
                   padding:
                       EdgeInsets.symmetric(vertical: 6.h, horizontal: 25.w),
                 ),
