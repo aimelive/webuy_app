@@ -118,7 +118,7 @@ class Home extends ConsumerWidget {
                                     : null,
                             child: Container(
                               width: 160.w,
-                              height: 165.h,
+                              height: 170.h,
                               padding: EdgeInsets.all(5.r),
                               child: FoodCardWidget(food: foods[index]),
                             ),
@@ -206,7 +206,7 @@ class Home extends ConsumerWidget {
                                       radius: 12.r,
                                       backgroundColor: Colors.redAccent,
                                       foregroundColor:
-                                          Theme.of(context).shadowColor,
+                                          Theme.of(context).cardColor,
                                       child: const Icon(Icons.remove),
                                     ),
                                   )

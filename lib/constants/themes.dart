@@ -30,10 +30,10 @@ class MyThemes {
   static final darkTheme = ThemeData(
     textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
     canvasColor: Colors.grey.shade900,
-    cardColor: Colors.grey.shade700,
+    cardColor: Colors.grey.shade800,
     backgroundColor: Colors.grey.shade700,
     errorColor: Colors.redAccent,
-    shadowColor: Colors.grey.shade700.withOpacity(0.4),
+    shadowColor: Colors.grey.shade700.withOpacity(0.2),
     selectedRowColor: Colors.black.withOpacity(0.6),
     bottomAppBarColor: const Color(0xFF913175),
     secondaryHeaderColor: Colors.blue.shade900,

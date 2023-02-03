@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webuy_app/constants/colors.dart';
 import 'package:webuy_app/constants/shared.dart';
+import 'package:webuy_app/constants/themes.dart';
+import 'package:webuy_app/services/payment_services.dart';
 import '../../components/back_button.dart';
 import 'controller/cart_controller.dart';
 
@@ -14,7 +16,7 @@ class CartView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cartController = ref.read(cartProvider.notifier);
     final cartFoods = ref.watch(cartProvider).foods;
-    // final isDark = ref.read(themeModeProvider.notifier).isDarkTheme;
+    final themeMode = ref.watch(themeModeProvider);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -74,15 +76,16 @@ class CartView extends ConsumerWidget {
                         ),
                         padding: EdgeInsets.all(5.r),
                         decoration: BoxDecoration(
-                            color: Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(8.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Theme.of(context).shadowColor,
-                                offset: const Offset(5, 5),
-                                blurRadius: 20,
-                              )
-                            ]),
+                          color: Theme.of(context).cardColor,
+                          borderRadius: BorderRadius.circular(8.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Theme.of(context).shadowColor,
+                              offset: const Offset(5, 5),
+                              blurRadius: 20,
+                            )
+                          ],
+                        ),
                         child: Row(
                           children: [
                             Image.network(
@@ -175,7 +178,16 @@ class CartView extends ConsumerWidget {
                                             BorderRadius.circular(4.r),
                                       ),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      await PaymentServices(
+                                        context,
+                                        food: food,
+                                        themeMode: themeMode,
+                                      ).makePayment(
+                                        amount: food.price.toInt().toString(),
+                                        currency: 'USD',
+                                      );
+                                    },
                                     child: const Text("Pay"),
                                   )
                                 ],

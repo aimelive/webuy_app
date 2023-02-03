@@ -45,6 +45,10 @@ dependencies:
   authentication_repository:
     git: https://github.com/aimelive/authentication_repository.git
   firebase_core: ^2.4.1
+  flutter_stripe: ^8.0.0+1
+  flutter_dotenv: ^5.0.2
+  dio: ^4.0.6
+  overlay_support: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +74,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/dotenv/.env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

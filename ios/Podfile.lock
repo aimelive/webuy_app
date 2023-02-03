@@ -59,6 +59,42 @@ PODS:
     - Flutter
     - FlutterMacOS
   - PromisesObjC (2.1.1)
+  - Stripe (23.3.3):
+    - StripeApplePay (= 23.3.3)
+    - StripeCore (= 23.3.3)
+    - StripePayments (= 23.3.3)
+    - StripePaymentsUI (= 23.3.3)
+    - StripeUICore (= 23.3.3)
+  - stripe_ios (0.0.1):
+    - Flutter
+    - Stripe (~> 23.3.0)
+    - StripeApplePay (~> 23.3.0)
+    - StripeFinancialConnections (~> 23.3.0)
+    - StripePayments (~> 23.3.0)
+    - StripePaymentSheet (~> 23.3.0)
+    - StripePaymentsUI (~> 23.3.0)
+  - StripeApplePay (23.3.3):
+    - StripeCore (= 23.3.3)
+  - StripeCore (23.3.3)
+  - StripeFinancialConnections (23.3.3):
+    - StripeCore (= 23.3.3)
+    - StripeUICore (= 23.3.3)
+  - StripePayments (23.3.3):
+    - StripeCore (= 23.3.3)
+    - StripePayments/Stripe3DS2 (= 23.3.3)
+  - StripePayments/Stripe3DS2 (23.3.3):
+    - StripeCore (= 23.3.3)
+  - StripePaymentSheet (23.3.3):
+    - StripeApplePay (= 23.3.3)
+    - StripeCore (= 23.3.3)
+    - StripePayments (= 23.3.3)
+    - StripePaymentsUI (= 23.3.3)
+  - StripePaymentsUI (23.3.3):
+    - StripeCore (= 23.3.3)
+    - StripePayments (= 23.3.3)
+    - StripeUICore (= 23.3.3)
+  - StripeUICore (23.3.3):
+    - StripeCore (= 23.3.3)
 
 DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -66,6 +102,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - stripe_ios (from `.symlinks/plugins/stripe_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -79,6 +116,14 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - PromisesObjC
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeFinancialConnections
+    - StripePayments
+    - StripePaymentSheet
+    - StripePaymentsUI
+    - StripeUICore
 
 EXTERNAL SOURCES:
   firebase_auth:
@@ -91,6 +136,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
+  stripe_ios:
+    :path: ".symlinks/plugins/stripe_ios/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
@@ -108,7 +155,16 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  Stripe: e12dd4f24d372fbae7b3090967bd416537a05324
+  stripe_ios: f93762c5b513f456e82ac57cf7cab2aacc6ec7f7
+  StripeApplePay: b288df6ea5237bec30ff00b8e12b9465684813e6
+  StripeCore: 05ca3061651987b6aeb52028a8de087ad015d555
+  StripeFinancialConnections: eae5e14983f26bc23165f2b897f708e366239f46
+  StripePayments: 63a4c0b41148c83c4197e8ff9f0295dd0829660b
+  StripePaymentSheet: f5e74b3c1fdd9d6ecd0e1075c1ad48d3b574cd26
+  StripePaymentsUI: f9c8a63faf4858f66e2302a717ebb7c928197f53
+  StripeUICore: 784efbcb5ed1e3dc69e4179e1a8feb247d792d81
 
-PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
+PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
 
 COCOAPODS: 1.11.3
