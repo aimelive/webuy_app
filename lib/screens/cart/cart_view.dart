@@ -14,6 +14,7 @@ class CartView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cartController = ref.read(cartProvider.notifier);
     final cartFoods = ref.watch(cartProvider).foods;
+    // final isDark = ref.read(themeModeProvider.notifier).isDarkTheme;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -73,11 +74,11 @@ class CartView extends ConsumerWidget {
                         ),
                         padding: EdgeInsets.all(5.r),
                         decoration: BoxDecoration(
-                            color: white,
+                            color: Theme.of(context).cardColor,
                             borderRadius: BorderRadius.circular(8.r),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey.shade300,
+                                color: Theme.of(context).shadowColor,
                                 offset: const Offset(5, 5),
                                 blurRadius: 20,
                               )

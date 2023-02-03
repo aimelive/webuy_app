@@ -4,11 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../models/food.dart';
 
 class FoodPlateWidget extends StatelessWidget {
-  const FoodPlateWidget({
-    Key? key,
-    required this.food,
-    this.isDragging,
-  }) : super(key: key);
+  const FoodPlateWidget(
+      {Key? key, required this.food, this.isDragging})
+      : super(key: key);
 
   final Food food;
   final bool? isDragging;
@@ -29,7 +27,7 @@ class FoodPlateWidget extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(3.r),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.8),
+          color: Theme.of(context).selectedRowColor,
           borderRadius: BorderRadius.circular(12.r),
         ),
         alignment: Alignment.center,

@@ -155,7 +155,7 @@ class Home extends ConsumerWidget {
                       height: 8.h,
                       margin: EdgeInsets.symmetric(vertical: 3.h),
                       decoration: ShapeDecoration(
-                        color: Colors.grey.shade300,
+                        color: Theme.of(context).shadowColor,
                         shape: const StadiumBorder(),
                         shadows: const [
                           BoxShadow(
@@ -186,7 +186,7 @@ class Home extends ConsumerWidget {
                     builder: (context, accepted, rejected) {
                       return Container(
                         height: 100.h,
-                        color: const Color(0xFFF2F2F3),
+                        color: Theme.of(context).backgroundColor,
                         child: ListView.builder(
                           itemCount: cartFoods.length,
                           scrollDirection: Axis.horizontal,
@@ -205,7 +205,8 @@ class Home extends ConsumerWidget {
                                     child: CircleAvatar(
                                       radius: 12.r,
                                       backgroundColor: Colors.redAccent,
-                                      foregroundColor: white,
+                                      foregroundColor:
+                                          Theme.of(context).shadowColor,
                                       child: const Icon(Icons.remove),
                                     ),
                                   )

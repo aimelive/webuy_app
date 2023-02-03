@@ -41,7 +41,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     width: 70.w,
                     height: 100.h,
                     decoration: BoxDecoration(
-                      color: white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(16.r),
                       border: selecteCategoryId == category.id
                           ? Border.all(
