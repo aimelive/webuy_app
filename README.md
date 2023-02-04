@@ -14,6 +14,8 @@ WeBuy Food is a flutter mobile application that helps to purchase food items onl
 - Remove from cart
 - Increase/decrease quantity item
 - Payment with Credit Card
+- App icon
+- Splash screen in dark/light theme
 ## Running locally
 - To run this app locally on your machine, you firstly need to clone this repo by running this command in your terminal:
 ```bash
