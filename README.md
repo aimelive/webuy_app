@@ -1,14 +1,25 @@
 # WeBuy Food - Flutter Mobile Application
 
-WeBuy Food is a flutter mobile application that helps to purchase food items online. This app has been built using the flutter/dart framework and implements the stripe payment gateway for secure online transactions. The app utilizes riverpod for efficient state management. Whether you are on the go or simply too busy to make a trip to the grocery store, WeBuy Food has got you covered.
+WeBuy Food is a flutter mobile application that helps to purchase food items online. This app has been built using the flutter/dart framework and implements the stripe payment gateway for secure online transactions. The app utilizes riverpod for efficient state management. 
 ## Features
-- 
+- Create user with name, email and password
+- Login with Email and Password
+- Reset password
+- Sign in with Google
+- Listing Food items
+- Viewing profile info
+- Switching theme (system, dark or light).
+- Sign out
+- Add to cart by drag and drop
+- Remove from cart
+- Increase/decrease quantity item
+- Payment with Credit Card
 ## Demoing
 ### Simulator Screenshots
 - [Dark Theme](https://photos.app.goo.gl/8mWnPcKgAMQCcVBJ8)
 - [Light Theme](https://photos.app.goo.gl/xtef6LHBbvzWsm3e9)
 
-### View demo video here
+### Watch demo video here
 - Watch it on [YouTube](https://www.youtube.com/watch?v=3UCcQSjcPMM) via here
 ### Download APK 
 - Get APK file from this zip folder on [Google Drive](https://drive.google.com/file/d/1xC2J9yA0lGIhmDVPaIX22CgSxoAi9f3w/view) together with screenshots and demo video files
