@@ -14,6 +14,33 @@ WeBuy Food is a flutter mobile application that helps to purchase food items onl
 - Remove from cart
 - Increase/decrease quantity item
 - Payment with Credit Card
+## Running locally
+- To run this app locally on your machine, you firstly need to clone this repo by running this command in your terminal:
+```bash
+git clone https://github.com/aimelive/webuy_app
+```
+- Navigate to `webuy_app`directory and open it in your favorite code editor like vs code or android studio
+```bash
+cd webuy_app
+```
+To open in VS code run `code .`
+- In the `assets/dotenv` folder, create `.env` file and fill out all variables as mentioned in `assets/dotenv/.env.example`
+- Next, Get all project dependencies by running this command
+```bash
+flutter pub get
+```
+- Finally, run below command in your terminal to launch the project in your emulator, simulator or physical device.
+```bash
+flutter run --release
+```
+- N.B: You can also run in debug mode by running `flutter run` but you may not able be able to sign in with google
+
+### Pre-requisites
+Running this project locally requires the following pre-requisites
+- Flutter SDK
+- Stripe Account with access to publishable key and secret key
+- Android Studio for Windows/Linux users
+- XCode for Mac users
 ## Demoing
 ### Simulator Screenshots
 - [Dark Theme](https://photos.app.goo.gl/8mWnPcKgAMQCcVBJ8)
@@ -29,7 +56,9 @@ WeBuy Food is a flutter mobile application that helps to purchase food items onl
 - Google Sign In
 - Riverpod for state management
 - Stripe for payments
-
+### Platform
+- Android
+- iOS
 ### UI References
 
 - Authentication Page UI from this [Figma file](https://www.patreon.com/posts/figma-design-ui-68844937) by [Watery Desert](https://github.com/watery-desert/)
