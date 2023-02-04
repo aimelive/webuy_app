@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:webuy_app/authentication/google_signin/google_signin_button.dart';
 import 'package:webuy_app/authentication/signin/button.dart';
@@ -27,15 +28,15 @@ class SignIn extends ConsumerWidget {
       }
     });
     return Column(
-      children: const [
-        EmailField(),
-        SizedBox(height: 16),
-        PasswordField(),
-        ForgotPwdButton(),
-        SizedBox(height: 24),
-        SignInButton(),
-        OrDivider(),
-        GoogleSignInButton()
+      children: [
+        const EmailField(),
+        SizedBox(height: 16.h),
+        const PasswordField(),
+        const ForgotPwdButton(),
+        SizedBox(height: 24.h),
+        const SignInButton(),
+        const OrDivider(),
+        const GoogleSignInButton()
       ],
     );
   }

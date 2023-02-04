@@ -15,7 +15,7 @@ class Profile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authController = ref.read(authProvider.notifier);
     final authUser = ref.watch(authProvider).user;
-    var themeMode = ref.watch(themeModeProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return Scaffold(
       body: Column(
@@ -34,7 +34,8 @@ class Profile extends ConsumerWidget {
             ],
           ),
           verticalSpace(150.h),
-          if (authUser.name != null) Text("Name: ${authUser.name}"),
+          if (authUser.name != null && authUser.name!.isNotEmpty)
+            Text("Name: ${authUser.name}"),
           if (authUser.email != null) Text("Email: ${authUser.email}"),
           verticalSpace(20.h),
           ElevatedButton(

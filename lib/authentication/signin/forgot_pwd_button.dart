@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webuy_app/authentication/forgot_password/forgot_password.dart';
 
 class ForgotPwdButton extends StatelessWidget {
@@ -15,14 +16,15 @@ class ForgotPwdButton extends StatelessWidget {
           ),
         );
       },
-      child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Align(
           alignment: Alignment.centerRight,
           child: Text(
             "Forgot Password",
             style: TextStyle(
-              color: Color(0xFF6574FF),
+              fontSize: 14.sp,
+              color: const Color(0xFF6574FF),
             ),
           ),
         ),

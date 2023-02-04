@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:webuy_app/authentication/signup/button.dart';
 import 'package:webuy_app/authentication/signup/email_field.dart';
@@ -25,14 +26,14 @@ class SignUp extends ConsumerWidget {
       }
     });
     return Column(
-      children: const [
-        NameField(),
-        SizedBox(height: 16),
-        EmailField(),
-        SizedBox(height: 16),
-        PasswordField(),
-        SizedBox(height: 24),
-        SignUpButton(),
+      children: [
+        const NameField(),
+        SizedBox(height: 16.h),
+        const EmailField(),
+        SizedBox(height: 16.h),
+        const PasswordField(),
+        SizedBox(height: 24.h),
+        const SignUpButton(),
       ],
     );
   }
