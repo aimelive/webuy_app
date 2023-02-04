@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webuy_app/constants/colors.dart';
 
 class RoundedButtonStyle extends StatelessWidget {
@@ -8,18 +9,18 @@ class RoundedButtonStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      padding: EdgeInsets.symmetric(vertical: 14.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: primaryColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Text(
         title,
-        style: const TextStyle(
+        style: TextStyle(
           color: white,
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 18.sp,
         ),
       ),
     );

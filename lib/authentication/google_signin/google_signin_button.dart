@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../components/animated_button.dart';
 import 'controller/google_signin_controller.dart';
@@ -22,18 +23,20 @@ class GoogleSignInButton extends ConsumerWidget {
     });
     return AnimatedButton(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 18),
+        padding: EdgeInsets.symmetric(vertical: 14.h),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.black.withOpacity(0.2), width: 1.5),
+          borderRadius: BorderRadius.circular(12.r),
+          border:
+              Border.all(color: Colors.black.withOpacity(0.2), width: 1.5.sp),
         ),
-        child: const Text(
+        child: Text(
           "Sign In With Google",
           style: TextStyle(
-              color: Color(0xFF9A9A9A),
-              fontWeight: FontWeight.bold,
-              fontSize: 18),
+            color: const Color(0xFF9A9A9A),
+            fontWeight: FontWeight.bold,
+            fontSize: 18.sp,
+          ),
         ),
       ),
       onTap: () {

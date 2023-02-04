@@ -3,17 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:webuy_app/constants/colors.dart';
 
+/// Add horizontal space in a row with the specified size (width)
 Widget horizontalSpace(double size) => SizedBox(
       width: size,
     );
+
+/// Add vertical space in a row with the specified size (height)
 Widget verticalSpace(double size) => SizedBox(
       height: size,
     );
 
+/// Navigating to specified route
 pushPage(BuildContext context, {required Widget to}) => Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => to),
     );
+
+/// Popping the current route page
 popPage(BuildContext context) => Navigator.pop(context);
 
 // bool isDarkTheme(BuildContext context) {
@@ -55,6 +61,7 @@ class MessageToast {
   final String message;
   const MessageToast._(this.message);
 
+  /// Showing success overlay modal toast
   static void success(BuildContext context, String message) {
     showMessage(
       context,
@@ -63,6 +70,7 @@ class MessageToast {
     );
   }
 
+  /// Showing error overlay modal toast
   static void error(BuildContext context, String error) {
     showMessage(
       context,

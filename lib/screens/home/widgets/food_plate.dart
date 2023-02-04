@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../models/food.dart';
 
 class FoodPlateWidget extends StatelessWidget {
-  const FoodPlateWidget(
-      {Key? key, required this.food, this.isDragging})
+  const FoodPlateWidget({Key? key, required this.food, this.isDragging})
       : super(key: key);
 
   final Food food;
@@ -19,7 +18,7 @@ class FoodPlateWidget extends StatelessWidget {
       width: 100.w,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(food.imgUrl),
+          image: AssetImage("assets/images/${food.imgUrl}"),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(12.r),

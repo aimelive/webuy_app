@@ -6,14 +6,12 @@ import 'package:webuy_app/authentication/controller/authentication_controller.da
 import 'package:webuy_app/constants/colors.dart';
 import 'package:webuy_app/constants/shared.dart';
 import 'package:webuy_app/models/food.dart';
-import 'package:webuy_app/screens/cart/cart_view.dart';
 import 'package:webuy_app/screens/cart/controller/cart_controller.dart';
 import 'package:webuy_app/screens/home/widgets/categories_widget.dart';
-import 'package:webuy_app/screens/home/widgets/food_plate.dart';
-import 'package:webuy_app/screens/profile/profile.dart';
 
-import '../cart/widgets/delete_item_widget.dart';
+import 'widgets/checkout_bottom_sheet.dart';
 import 'widgets/food_card.dart';
+import 'widgets/profile_avatar.dart';
 
 class Home extends ConsumerWidget {
   const Home({super.key});
@@ -48,29 +46,13 @@ class Home extends ConsumerWidget {
                           child: Text(
                             "Hi, What are we eating today?",
                             style: GoogleFonts.poppins(
-                              fontSize: 20.sp,
+                              fontSize: 23.sp,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
                         ),
                         horizontalSpace(80.w),
-                        GestureDetector(
-                          onTap: () => pushPage(
-                            context,
-                            to: const Profile(),
-                          ),
-                          child: CircleAvatar(
-                            backgroundColor: primaryColor,
-                            foregroundColor: white,
-                            radius: 25.r,
-                            child: Text(
-                              authUser.name == null
-                                  ? authUser.email![0]
-                                  : authUser.name![0],
-                              style: TextStyle(fontSize: 25.sp),
-                            ),
-                          ),
-                        )
+                        ProfileAvatar(authUser: authUser)
                       ],
                     ),
                     verticalSpace(18.h),
@@ -89,7 +71,8 @@ class Home extends ConsumerWidget {
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                        crossAxisCount:
+                            MediaQuery.of(context).size.width > 650 ? 3 : 2,
                         mainAxisSpacing: 18.h,
                         crossAxisSpacing: 17.w,
                       ),
@@ -134,102 +117,12 @@ class Home extends ConsumerWidget {
                 ),
               ),
             ),
-            Container(
-              height: showBottomSheet ? bottomSheetHeight : 0.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(20.r),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: cartFoods.isEmpty
-                    ? MainAxisAlignment.start
-                    : MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () => cartController.onShowBottomSheet(false),
-                    child: Container(
-                      width: 40.w,
-                      height: 8.h,
-                      margin: EdgeInsets.symmetric(vertical: 3.h),
-                      decoration: ShapeDecoration(
-                        color: Theme.of(context).shadowColor,
-                        shape: const StadiumBorder(),
-                        shadows: const [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(5, 5),
-                            blurRadius: 24,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  DragTarget<Food>(
-                    onAccept: (data) {
-                      cartController.onAddCart(data);
-                    },
-                    onLeave: (data) {
-                      cartController.onWillAccept(WillAccept.none);
-                    },
-                    onWillAccept: (data) {
-                      final bool willAccept = !cartFoods.contains(data);
-                      if (willAccept) {
-                        cartController.onWillAccept(WillAccept.yes);
-                      } else {
-                        cartController.onWillAccept(WillAccept.no);
-                      }
-                      return willAccept;
-                    },
-                    builder: (context, accepted, rejected) {
-                      return Container(
-                        height: 100.h,
-                        color: Theme.of(context).backgroundColor,
-                        child: ListView.builder(
-                          itemCount: cartFoods.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: ((context, index) {
-                            return Stack(
-                              alignment: Alignment.topRight,
-                              children: [
-                                FoodPlateWidget(
-                                  food: cartFoods[index],
-                                ),
-                                if (isRemoving)
-                                  GestureDetector(
-                                    onTap: () => cartController.onRemoveCart(
-                                      cartFoods[index],
-                                    ),
-                                    child: CircleAvatar(
-                                      radius: 12.r,
-                                      backgroundColor: Colors.redAccent,
-                                      foregroundColor:
-                                          Theme.of(context).cardColor,
-                                      child: const Icon(Icons.remove),
-                                    ),
-                                  )
-                              ],
-                            );
-                          }),
-                        ),
-                      );
-                    },
-                  ),
-                  if (cartFoods.isNotEmpty)
-                    DeleteItemFromCart(
-                      onRemoveClicked: () =>
-                          cartController.onRemoving(!isRemoving),
-                      onCheckoutClicked: () {
-                        cartController.onShowBottomSheet(!showBottomSheet);
-                        pushPage(context, to: const CartView());
-                      },
-                      isRemoving: isRemoving,
-                      cartFoods: cartFoods.length,
-                    )
-                ],
-              ),
+            CheckoutBottomSheet(
+              show: showBottomSheet,
+              height: bottomSheetHeight,
+              foods: cartFoods,
+              controller: cartController,
+              isRemoving: isRemoving,
             )
           ],
         ),
@@ -259,7 +152,10 @@ class Home extends ConsumerWidget {
                     radius: 15.r,
                     child: Text(
                       cartFoods.length.toString(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15.sp,
+                      ),
                     ),
                   ),
                 )

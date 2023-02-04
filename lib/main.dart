@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,12 +40,6 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authenticationState = ref.watch(authProvider);
     ThemeMode themeMode = ref.watch(themeModeProvider);
-
-    if (themeMode == ThemeMode.system) {
-      final brightness = SchedulerBinding.instance.window.platformBrightness;
-      themeMode =
-          brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
-    }
 
     Widget getHome() {
       if (authenticationState.status == AuthenticationStatus.authenticated) {

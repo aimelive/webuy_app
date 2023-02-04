@@ -13,7 +13,6 @@ class FoodCardWidget extends StatelessWidget {
     Key? key,
     required this.food,
     this.isDragging,
-
   }) : super(key: key);
 
   @override
@@ -26,14 +25,14 @@ class FoodCardWidget extends StatelessWidget {
           child: isDragging == true
               ? ColorFiltered(
                   colorFilter: const ColorFilter.linearToSrgbGamma(),
-                  child: Image.network(
-                    food.imgUrl,
+                  child: Image.asset(
+                    "assets/images/${food.imgUrl}",
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
                 )
-              : Image.network(
-                  food.imgUrl,
+              : Image.asset(
+                  "assets/images/${food.imgUrl}",
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),

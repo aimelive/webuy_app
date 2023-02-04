@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webuy_app/authentication/signin/signin.dart';
 import 'package:webuy_app/authentication/signup/signup.dart';
 import 'package:webuy_app/components/animated_shape/animated_shape.dart';
@@ -21,7 +22,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
+            padding: EdgeInsets.fromLTRB(18.w, 250.h, 18.w, 0),
             child: SlideFadeSwitcher(
                 child: _showSignIn ? const SignIn() : const SignUp()),
           ),

@@ -3,26 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webuy_app/constants/colors.dart';
 
-class DarkModeNotifier extends StateNotifier<ThemeMode> {
-  DarkModeNotifier() : super(ThemeMode.system);
-
-  // bool get isDarkTheme {
-  //   final brightness = SchedulerBinding.instance.window.platformBrightness;
-  //   if (state == ThemeMode.system && brightness == Brightness.dark) {
-  //     return true;
-  //   } else if (state == ThemeMode.system) {
-  //     return false;
-  //   }
-  //   return state == ThemeMode.dark;
-  // }
+class ThemeModeNotifier extends StateNotifier<ThemeMode> {
+  ThemeModeNotifier() : super(ThemeMode.system);
 
   void toggle() {
     state = state == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
   }
 }
 
-final themeModeProvider = StateNotifierProvider<DarkModeNotifier, ThemeMode>(
-  (ref) => DarkModeNotifier(),
+final themeModeProvider = StateNotifierProvider<ThemeModeNotifier, ThemeMode>(
+  (ref) => ThemeModeNotifier(),
 );
 
 class MyThemes {

@@ -1,4 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:webuy_app/constants/colors.dart';
 
 class TopShape extends CustomClipper<Path> {
   final AnimationController _controller;
@@ -16,13 +21,16 @@ class TopShape extends CustomClipper<Path> {
         color: color,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(left: 16),
+            padding: EdgeInsets.only(
+              left: 16.w,
+              top: Platform.isAndroid ? 12.h : 0.h,
+            ),
             child: Text(
               text,
-              style: const TextStyle(
-                fontSize: 34,
+              style: GoogleFonts.poppins(
+                fontSize: 34.sp,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: white,
               ),
             ),
           ),

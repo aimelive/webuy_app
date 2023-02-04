@@ -35,9 +35,8 @@ class PaymentServices {
     } catch (e, s) {
       MessageToast.error(
         context,
-        "Error: Something went wrong, Try again later",
+        "Error: Something went wrong, Try again later, ${e.toString()} $s",
       );
-      print("Exception: $e $s");
     }
   }
 
@@ -51,8 +50,7 @@ class PaymentServices {
       );
     } on Exception catch (e) {
       if (e is StripeException) {
-        MessageToast.error(
-            context, "Error from Stripe: ${e.error.localizedMessage}");
+        MessageToast.error(context, "${e.error.localizedMessage}");
       } else {
         MessageToast.error(context, "Unforeseen error: ${e.toString()}");
       }
